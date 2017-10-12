@@ -15,7 +15,7 @@ This plugin is ported from [PCLStorage](https://github.com/dsplaisted/PCLStorage
 
 **Installation**
 
-Get from [Nuget]()
+Get from [Nuget](https://www.nuget.org/packages/StorageEverywhere)
 
 If you reference from PCL/Net Standard, you also need to reference from each platform-platform specific app.
 
