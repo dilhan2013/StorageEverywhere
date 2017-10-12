@@ -2,6 +2,17 @@
 
 This plugin is ported from [PCLStorage](https://github.com/dsplaisted/PCLStorage/blob/master/README.md), because I need this plugin to work with .NET Standard.
 
+**Supported Platforms**
+
+
+|Platform|
+|---------|
+|.NET Standard 1.0|
+|Android|
+|iOS|
+|WPF .NET 4.5|
+|UWP|
+
 **Installation**
 
 Get from [Nuget]()
