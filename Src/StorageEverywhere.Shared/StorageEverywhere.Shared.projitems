@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>7be32ded-4a16-46cd-ab09-7ce00b33e7e1</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>StorageEverywhere</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AwaitExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\PCLStorageExceptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FileSystem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PortablePath.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Requires.cs" />
+  </ItemGroup>
+</Project>

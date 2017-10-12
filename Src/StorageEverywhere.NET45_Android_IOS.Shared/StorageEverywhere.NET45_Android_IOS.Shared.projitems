@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>d3271975-6f7b-48de-8514-a4a55454a97a</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>StorageEverywhere</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)DesktopFileSystem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FileSystemFile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FileSystemFolder.cs" />
+  </ItemGroup>
+</Project>

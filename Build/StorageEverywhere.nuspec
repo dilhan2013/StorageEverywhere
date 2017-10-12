@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>StorageEverywhere</id>
+        <version>1.0.0</version>
+        <title>StorageEverywhere - Portable Storage APIs</title>
+        <authors>Yunus Efendi</authors>
+        <owners>Yunus Efendi</owners>
+        <description>StorageEverywhere provides a consistent, portable set of local file IO APIs for .NET, Windows Phone, Windows Store, Xamarin.iOS, Xamarin.Android, and Silverlight.  This makes it easier to create cross-platform .NET libraries and apps.</description>
+    </metadata>
+    <files>
+      <!-- Core.NETStandard -->
+      <file src="..\Src\StorageEverywhere\bin\Release\netstandard1.0\StorageEverywhere.*" target="lib\netstandard1.0" />
+      <file src="..\Src\StorageEverywhere.Abstractions\bin\Release\netstandard1.0\StorageEverywhere.*" target="lib\netstandard1.0"/>
+      
+      <!-- NET 4.5-->
+      <file src="..\src\StorageEverywhere.NET45\bin\Release\StorageEverywhere.*" target="lib\net45" />
+      <file src="..\Src\StorageEverywhere.Abstractions\bin\Release\netstandard1.0\StorageEverywhere.*" target="lib\net45"/>
+
+      <!-- UWP -->
+      <file src="..\src\StorageEverywhere.UWP\bin\Release\StorageEverywhere.*" target="lib\UAP10.0" />
+      <file src="..\Src\StorageEverywhere.Abstractions\bin\Release\netstandard1.0\StorageEverywhere.*" target="lib\UAP10.0"/>
+
+      <!-- Android -->
+      <file src="..\src\StorageEverywhere.Android\bin\Release\StorageEverywhere.*" target="lib\monoandroid" />
+      <file src="..\Src\StorageEverywhere.Abstractions\bin\Release\netstandard1.0\StorageEverywhere.*" target="lib\monoandroid"/>
+
+      <!-- iOS -->
+      <file src="..\src\StorageEverywhere.iOS\bin\Release\StorageEverywhere.*" target="lib\monotouch" />
+      <file src="..\Src\StorageEverywhere.Abstractions\bin\Release\netstandard1.0\StorageEverywhere.*" target="lib\monotouch"/>
+
+      <!-- iOS Unified --><!--
+      <file src="..\src\PCLStorage.iOS-Unified\bin\iPhone\Release\PCLStorage.*" target="lib\portable-Xamarin.iOS+Xamarin.Mac" />
+      <file src="..\src\PCLStorage.Abstractions.NoSL\bin\Release\PCLStorage.*" target="lib\portable-Xamarin.iOS+Xamarin.Mac" />-->
+      
+      <!--<file src="..\src\PCLStorage.IsoStore.SL\bin\Release\PCLStorage.dll" target="lib\sl5\PCLStorage.dll" />
+      <file src="..\src\PCLStorage.IsoStore.SL\bin\Release\PCLStorage.xml" target="lib\sl5\PCLStorage.xml" />
+      <file src="..\src\PCLStorage.Abstractions\bin\Release\PCLStorage.Abstractions.dll" target="lib\sl5\PCLStorage.Abstractions.dll" />
+      <file src="..\src\PCLStorage.Abstractions\bin\Release\PCLStorage.Abstractions.xml" target="lib\sl5\PCLStorage.Abstractions.xml" />-->
+      
+      <!--<file src="..\src\PCLStorage.WindowsPhone\bin\Release\PCLStorage.dll" target="lib\wp8\PCLStorage.dll" />
+      <file src="..\src\PCLStorage.WindowsPhone\bin\Release\PCLStorage.xml" target="lib\wp8\PCLStorage.xml" />
+      <file src="..\src\PCLStorage.Abstractions.NoSL\bin\Release\PCLStorage.Abstractions.dll" target="lib\wp8\PCLStorage.Abstractions.dll" />
+      <file src="..\src\PCLStorage.Abstractions.NoSL\bin\Release\PCLStorage.Abstractions.xml" target="lib\wp8\PCLStorage.Abstractions.xml" />-->
+
+    </files>
+</package>
