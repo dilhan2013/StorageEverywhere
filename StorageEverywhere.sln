@@ -24,6 +24,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{25B32959
 		Build\StorageEverywhere.nuspec = Build\StorageEverywhere.nuspec
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{143A984D-3C98-4EF0-89D3-7DEF8811EDD3}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Src\StorageEverywhere.NET45_Android_IOS.Shared\StorageEverywhere.NET45_Android_IOS.Shared.projitems*{054f1440-0f44-4ac9-8044-3d6aa7d85eaa}*SharedItemsImports = 4
