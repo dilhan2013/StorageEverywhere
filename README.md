@@ -34,7 +34,7 @@ namespace StorageEverywhere.Helpers
         {
             // get hold of the file system
             IFolder folder = rootFolder ?? FileSystem.Current.LocalStorage;
-            ExistenceCheckResult folderexist = await folder.CheckExistsAsync(fileName);
+            ExistenceCheckResult folderexist = await folder.CheckExistsAsync(fileName).ConfigureAwait(false);
             // already run at least once, don't overwrite what's there  
             if (folderexist == ExistenceCheckResult.FileExists)
             {
@@ -47,7 +47,7 @@ namespace StorageEverywhere.Helpers
         {
             // get hold of the file system  
             IFolder folder = rootFolder ?? FileSystem.Current.LocalStorage;
-            ExistenceCheckResult folderexist = await folder.CheckExistsAsync(folderName);
+            ExistenceCheckResult folderexist = await folder.CheckExistsAsync(folderName).ConfigureAwait(false);
             // already run at least once, don't overwrite what's there  
             if (folderexist == ExistenceCheckResult.FolderExists)
             {
@@ -59,40 +59,40 @@ namespace StorageEverywhere.Helpers
         public async static Task<IFolder> CreateFolder(this string folderName, IFolder rootFolder = null)
         {
             IFolder folder = rootFolder ?? FileSystem.Current.LocalStorage;
-            folder = await folder.CreateFolderAsync(folderName, CreationCollisionOption.ReplaceExisting);
+            folder = await folder.CreateFolderAsync(folderName, CreationCollisionOption.ReplaceExisting).ConfigureAwait(false);
             return folder;
         }
 
         public async static Task<IFolder> GetFolderAsync(this string folderName, IFolder rootFolder = null)
         {
             IFolder folder = rootFolder ?? FileSystem.Current.LocalStorage;
-            folder = await folder.GetFolderAsync(folderName);
+            folder = await folder.GetFolderAsync(folderName).ConfigureAwait(false);
             return folder;
         }
 
         public async static Task<IFile> CreateFile(this string filename, IFolder rootFolder = null)
         {
             IFolder folder = rootFolder ?? FileSystem.Current.LocalStorage;
-            IFile file = await folder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
+            IFile file = await folder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting).ConfigureAwait(false);
             return file;
         }
 
         public async static Task<IList<IFile>> GetFilesAsync(this string filename, IFolder rootFolder = null)
         {
             IFolder folder = rootFolder ?? FileSystem.Current.LocalStorage;
-            return await folder.GetFilesAsync();
+            return await folder.GetFilesAsync().ConfigureAwait(false);
         }
 
         public async static Task<IFile> GetFileAsync(this string filename, IFolder rootFolder = null)
         {
             IFolder folder = rootFolder ?? FileSystem.Current.LocalStorage;
-            return await folder.GetFileAsync(filename);
+            return await folder.GetFileAsync(filename).ConfigureAwait(false);
         }
 
         public async static Task<bool> WriteTextAllAsync(this string filename, string content = "", IFolder rootFolder = null)
         {
             IFile file = await filename.CreateFile(rootFolder);
-            await file.WriteAllTextAsync(content);
+            await file.WriteAllTextAsync(content).ConfigureAwait(false);
             return true;
         }
 
@@ -100,22 +100,23 @@ namespace StorageEverywhere.Helpers
         {
             string content = "";
             IFolder folder = rootFolder ?? FileSystem.Current.LocalStorage;
-            bool exist = await fileName.IsFileExistAsync(folder);
+            bool exist = await fileName.IsFileExistAsync(folder).ConfigureAwait(false);
             if (exist == true)
             {
-                IFile file = await folder.GetFileAsync(fileName);
-                content = await file.ReadAllTextAsync();
+                IFile file = await folder.GetFileAsync(fileName).ConfigureAwait(false);
+                content = await file.ReadAllTextAsync().ConfigureAwait(false);
             }
             return content;
         }
+
         public async static Task<bool> DeleteFile(this string fileName, IFolder rootFolder = null)
         {
             IFolder folder = rootFolder ?? FileSystem.Current.LocalStorage;
-            bool exist = await fileName.IsFileExistAsync(folder);
+            bool exist = await fileName.IsFileExistAsync(folder).ConfigureAwait(false);
             if (exist == true)
             {
-                IFile file = await folder.GetFileAsync(fileName);
-                await file.DeleteAsync();
+                IFile file = await folder.GetFileAsync(fileName).ConfigureAwait(false);
+                await file.DeleteAsync().ConfigureAwait(false);
                 return true;
             }
             return false;
